@@ -1,33 +1,29 @@
 
-import './App.css';
+
 import './index.css';
-import data from "./data"
-import List from "./List"
-import React ,{useState} from 'react';
+import React from 'react'
+import Review from "./Review";
+
 
 
 function App() {
-  const[people,setPeople]=useState(data);
-  const[press,setPress]=useState(false);
-  function click(){
-    if (press===false){
-    setPeople([]);
-    setPress(true);
-    }else 
-    {
-      setPress(false);
-      setPeople(data);
-    }
+  return (
+    
+      <main>
+            <section className="container">
+            <div className="title">
+                <h2>Our Reviews</h2>
+                <div className="underline"></div>
 
-  }
-  return (<main>
-    <section className="container">
-      <h3>{people.length}  Birthday's today </h3>
-      <List people={people}/>
-      <button onClick={click}>Click Me</button>
-    </section>
-  </main>
+          </div>
+          <Review/>
+
+            </section>
+        </main>
+     
+
+
   )
 }
 
-export default App;
+export default App
